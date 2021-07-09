@@ -8,9 +8,10 @@
   <ItemGroup>
     <None Remove="HtmlAgilityPack" />
     <None Remove="Microsoft.Office.Interop.Excel" />
+    <None Remove="CsvHelper" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" Version="1.11.34" />
-    <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1000" />
+    <PackageReference Include="CsvHelper" Version="27.1.1" />
   </ItemGroup>
 </Project>
