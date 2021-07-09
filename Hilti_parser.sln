@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.810.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hilti_parser", "Hilti_parser\Hilti_parser.csproj", "{87A8E2D5-ECF7-4424-81C3-7CC4C630DAF8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hilti_parser", "Hilti_parser\Hilti_parser.csproj", "{1B29FD6B-D95D-4115-A3D2-CD6C3E22D23F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{87A8E2D5-ECF7-4424-81C3-7CC4C630DAF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87A8E2D5-ECF7-4424-81C3-7CC4C630DAF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87A8E2D5-ECF7-4424-81C3-7CC4C630DAF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{87A8E2D5-ECF7-4424-81C3-7CC4C630DAF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B29FD6B-D95D-4115-A3D2-CD6C3E22D23F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B29FD6B-D95D-4115-A3D2-CD6C3E22D23F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B29FD6B-D95D-4115-A3D2-CD6C3E22D23F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B29FD6B-D95D-4115-A3D2-CD6C3E22D23F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
