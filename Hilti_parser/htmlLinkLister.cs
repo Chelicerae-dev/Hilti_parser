@@ -41,7 +41,7 @@ namespace Hilti_parser
             {   
                 foreach(Array line in res)
                 {
-                    writer.WriteLine($"{line.GetValue(0)};{line.GetValue(1)}\n");
+                    writer.WriteLine($"{line.GetValue(0)};{line.GetValue(1)}");
                 }
                 
             }
