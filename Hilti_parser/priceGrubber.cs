@@ -1,11 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using HtmlAgilityPack;
-//using Newtonsoft.Json;
 
 namespace Hilti_parser
 {
@@ -44,39 +42,6 @@ namespace Hilti_parser
                     string scriptDataPreCropped = scriptData.Substring(scriptData.IndexOf("productPageData") + 17);
                     string scriptDataCropped = scriptDataPreCropped.Remove(scriptDataPreCropped.IndexOf(';'));
                     //string scriptDataCropped = scriptDataFullyCropped.Replace("\"", "\"\"");
-                   
-                    //deserealizing JSON
-                    //BaseJson jsJSONObject = JsonSerializer.Deserialize<BaseJson>(scriptDataCropped);
-
-                    //preparing data for jsonReader
-                    /*byte[] scriptDataBytes = System.Text.Encoding.ASCII.GetBytes(scriptDataCropped);
-                    long variantsStart = 0;
-                    long variantsFinish = 0;
-
-                    Utf8JsonReader jsonReader = new Utf8JsonReader(scriptDataBytes);*/
-
-                    /*while(jsonReader.Read())
-                    {
-                        //Console.WriteLine(jsonReader.TokenType);
-                        if (jsonReader.TokenType == JsonTokenType.PropertyName && jsonReader.GetString() == "variants")
-                        {
-                            variantsStart = jsonReader.BytesConsumed;
-                            Console.WriteLine(jsonReader.GetString());
-                            Console.ReadKey();
-                        }
-                        if (jsonReader.TokenType == JsonTokenType.PropertyName && jsonReader.GetString() == "technical_attributes")
-                        {
-                            variantsFinish = jsonReader.BytesConsumed;
-                        }
-
-                    }
-                    byte[] variantsBytes = scriptDataBytes[(int)variantsStart..(int)variantsFinish];
-                    string variantsTemp = System.Text.Encoding.ASCII.GetString(variantsBytes);
-                    string variantsData = variantsTemp.Substring(1, variantsTemp.Length - 27);
-                    //Array variantsArr = variantsData.Split("},{");
-                    Variants[] variants = JsonSerializer.Deserialize<Variants[]>(variantsData);*/
-
-
                     //JsonDocument jsonParsed = JsonDocument.ParseValue(ref jsonReader);
                     try
                     {
