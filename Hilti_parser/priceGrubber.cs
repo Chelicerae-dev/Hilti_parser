@@ -2,6 +2,7 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using HtmlAgilityPack;
 
 namespace Hilti_parser
@@ -31,6 +32,7 @@ namespace Hilti_parser
                     double price = 0;
 
                     //div with <script> has class="js-tab-shop js-tab-content" and id="shop"
+
                     string scriptData = document.DocumentNode.SelectSingleNode("//div[@id=\"shop\"]/script").InnerText;
 
                     //cropping in 2 steps because I'm too lazy at sunday 6.26 AM to make it right in 1 line
@@ -65,9 +67,13 @@ namespace Hilti_parser
                         Console.WriteLine(scriptDataCropped);
                         Console.ReadLine();
                     }
+
                     Console.WriteLine($"Price is {price}");
                     string article = link.GetValue(0) + "H";
                     result.Add($"{article};{link.GetValue(0)};;;;{price};RUB;;;;;;;;;;;;;;;;;;;;;;");
+
+
+
                 }
                 else
                 {
