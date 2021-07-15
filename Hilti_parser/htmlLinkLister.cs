@@ -2,8 +2,7 @@
 using System.IO;
 using HtmlAgilityPack;
 using System.Collections.Generic;
-using System.Web;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace Hilti_parser
 {
@@ -26,13 +25,28 @@ namespace Hilti_parser
                     var htmlDoc = web.Load(html);
                     //var linkNode = htmlDoc.DocumentNode.SelectSingleNode("//a/@data-parent-link-ref");
                     string link = htmlDoc.DocumentNode.SelectSingleNode("//a/@data-parent-link-ref").GetAttributeValue("href", "Failed to get a link!");
+                    string articleReplacement;
+                    try
+                    {
+                        string articleReplacementDiv = htmlDoc.DocumentNode.SelectSingleNode("//div/@[class=\"m-grid-item--replacement\"]").InnerText;
+                        articleReplacement = Regex.Match(articleReplacementDiv, "[0-9]*").Value;
+                        Console.WriteLine($"Replacement Hilti article is {articleReplacement}");
+
+                    }
+                    catch (NullReferenceException ex)
+                    {
+                        Console.WriteLine("Has no article replacements");
+                        articleReplacement = "";
+                    }
+                        
                     Console.Write($"has link {link}\n");
-                    string[] arr = { article, link };
+                    string[] arr = { article, link, articleReplacement };
                     res.Add(arr);
                 }
-                catch
+                catch(Exception ex)
                 {
-                    Console.Write("failed!\n");
+                    Console.Write($"failed! {ex.ToString()} {ex.Message}\n");
+                    Console.ReadLine();
                     string[] arr = { article, "Failed!" };
                     res.Add(arr);
                 } 
@@ -41,7 +55,7 @@ namespace Hilti_parser
             {   
                 foreach(Array line in res)
                 {
-                    writer.WriteLine($"{line.GetValue(0)};{line.GetValue(1)}");
+                    writer.WriteLine($"{line.GetValue(0)};{line.GetValue(1)};{line.GetValue(2)}");
                 }
                 
             }

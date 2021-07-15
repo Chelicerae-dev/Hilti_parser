@@ -81,7 +81,8 @@ namespace Hilti_parser
                 }
             }
             //string todayDate = DateTime.UtcNow.Date.ToString();
-            using(StreamWriter sw = new StreamWriter(@$"../../../../Hilti prices.csv"))
+            //using(StreamWriter sw = new StreamWriter(@$"../../../../Hilti prices.csv"))
+            using(StreamWriter sw = new StreamWriter(@$"Hilti prices.csv"))
             {
                 sw.WriteLine(resultTemplate);
                 foreach(string line in result)
